@@ -212,9 +212,10 @@ The core data entity is the `ideas` table, which is protected by Row Level Secur
 We're actively working to resolve the following issues:
 
 - [ ] **AI Integration**: AI features are not yet implemented in the current version
-- [ ] **Responsive Design**: UI inconsistencies on mobile devices
+- [x] **Responsive Design**: UI inconsistencies on mobile devices
 - [ ] **Search Performance**: Search functionality can be slow with large datasets
 - [ ] **Image Uploads**: Support for attaching images to ideas is not implemented
+- [ ] **Fix the API**: we made the API to make any external AI write ideas you already discussed, and the AI will auto-add it.
 
 ---
 
