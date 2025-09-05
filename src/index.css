@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Idea Hub Design System - Modern card-based interface */
+
+@layer base {
+  :root {
+    /* Core brand colors */
+    --background: 250 100% 98%;
+    --foreground: 230 15% 15%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
+    --card-hover: 240 20% 96%;
+
+    /* Interactive elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
+
+    /* Primary brand (purple gradient) */
+    --primary: 270 70% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 280 80% 70%;
+
+    /* Secondary actions */
+    --secondary: 240 20% 94%;
+    --secondary-foreground: 230 15% 25%;
+
+    /* Muted elements */
+    --muted: 240 15% 95%;
+    --muted-foreground: 230 10% 50%;
+
+    /* Accent highlights */
+    --accent: 260 70% 95%;
+    --accent-foreground: 270 70% 60%;
+
+    /* Status colors */
+    --idea: 50 100% 85%;
+    --research: 200 100% 85%;
+    --progress: 280 70% 85%;
+    --launched: 120 50% 85%;
+    --archived: 0 0% 90%;
+
+    /* Destructive actions */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 240 20% 90%;
+    --input: 240 20% 96%;
+    --ring: 270 70% 60%;
+
+    /* Design system */
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card-hover)) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(240 30% 96%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-float: 0 8px 30px -4px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* GitHub-inspired dark theme */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 89%;
+
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 89%;
+    --card-hover: 220 13% 13%;
+
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 9% 89%;
+
+    --primary: 213 93% 68%;
+    --primary-foreground: 220 13% 9%;
+    --primary-glow: 210 100% 75%;
+
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 220 9% 89%;
+
+    --muted: 220 13% 16%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 220 13% 16%;
+    --accent-foreground: 220 9% 89%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 220 9% 89%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 16%;
+    --ring: 213 93% 68%;
+
+    /* Status colors for dark mode */
+    --idea: 45 93% 47%;
+    --research: 200 91% 54%;
+    --progress: 271 81% 56%;
+    --launched: 142 76% 36%;
+    --archived: 220 9% 46%;
+
+    --sidebar-background: 220 13% 9%;
+    --sidebar-foreground: 220 9% 89%;
+    --sidebar-primary: 213 93% 68%;
+    --sidebar-primary-foreground: 220 13% 9%;
+    --sidebar-accent: 220 13% 16%;
+    --sidebar-accent-foreground: 220 9% 89%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 213 93% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Global text wrapping rules */
+  p, div, span, td, th, li, h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Code and URL handling */
+  code, pre, .url-content {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+
+  /* Markdown content */
+  .prose * {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Mobile responsive text */
+  @media (max-width: 640px) {
+    * {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+  }
+}
