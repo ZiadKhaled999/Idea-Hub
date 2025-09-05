@@ -262,7 +262,7 @@ Please review [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on our 
 
 ## 📜 License
 
-Distributed under the Apache 2.0 License. See [LICENSE.txt](LICENSE.txt) for more information.
+Distributed under the Apache 2.0 License. See [LICENSE.txt](https://github.com/ZiadKhaled999/Idea-Hub?tab=Apache-2.0-1-ov-file) for more information.
 
 ---
 
