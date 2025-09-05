@@ -3,7 +3,7 @@
 <div align="center">
 
   <!-- Logo placeholder with better styling -->
-  <img src="https://iili.io/K2mqQsf.png" alt="Idea Hub logo " width="200" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+  <img src="https://i.ibb.co/qYQ4PnSq/logo.png" alt="Idea Hub logo " width="200" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
 
   <h1>Idea Hub</h1>
 
