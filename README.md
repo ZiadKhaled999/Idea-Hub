@@ -1,9 +1,9 @@
-# Idea Hub - Enhanced README
+# Idea Hub
 
 <div align="center">
 
   <!-- Logo placeholder with better styling -->
-  <img src="https://www.flaticon.com/free-icon/idea_4415867?term=idea&related_id=4415867" alt="Idea Hub Project Banner" width="200" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+  <img src="https://iili.io/K2mqQsf.png" alt="Idea Hub logo " width="200" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
 
   <h1>Idea Hub</h1>
 
@@ -28,7 +28,7 @@ Standard note-taking applications fail to capture the structured journey of a di
 
 <!-- Application Demo Placeholder -->
 <div align="center">
-  <img src="https://via.placeholder.com/800x400/9f58a3/ffffff?text=Idea+Hub+Application+Demo" alt="Idea Hub Application Demo" style="border-radius: 10px;"/>
+  <img src="https://i.ibb.co/WWrKDmtV/Idea-Hub-Application-screenshot.png" alt="Idea Hub Application screenshot" style="border-radius: 10px;"/>
 </div>
 
 ## 📋 Table of Contents
@@ -99,13 +99,16 @@ To provision a local instance of the application, please follow the steps below.
     Create a `.env.local` file in the project's root directory and populate it with your Supabase project credentials.
     ```env
     # Supabase Configuration
-    NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-    
-    # AI Features (Not yet implemented)
-    VITE_SUPABASE_PROJECT_ID=""
+     VITE_SUPABASE_PROJECT_ID=""
     VITE_SUPABASE_PUBLISHABLE_KEY=""
     VITE_SUPABASE_URL=""
+    
+    # AI Features (Not yet implemented)
+    # For DeepSeek API (Prompt Enhancement)
+    DEEPSEEK_API_KEY="your_deepseek_api_key_here"
+
+    # For Stability AI API (Free Tier Image Generation) / Add any one free.
+    STABILITY_API_KEY="your_stability_ai_api_key_here"
     ```
 
 4.  **Initialize the database schema:**
@@ -125,11 +128,9 @@ The application requires the following environment variables for backend connect
 
 | Variable                      | Description                                           | Required |
 | ----------------------------- | ----------------------------------------------------- | :------: |
-| `NEXT_PUBLIC_SUPABASE_URL`    | The unique API endpoint URL for your Supabase project. |  `true`  |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | The public anonymous key for your Supabase project.   |  `true`  |
-| `VITE_SUPABASE_PROJECT_ID`    | Supabase project ID (for future AI features)          | `false`  |
-| `VITE_SUPABASE_PUBLISHABLE_KEY`| Supabase publishable key (for future AI features)     | `false`  |
-| `VITE_SUPABASE_URL`           | Supabase URL (for future AI features)                 | `false`  |
+| `VITE_SUPABASE_PROJECT_ID`    | Supabase project ID (for future AI features)          | `true`  |
+| `VITE_SUPABASE_PUBLISHABLE_KEY`| Supabase publishable key (for future AI features)     | `true`  |
+| `VITE_SUPABASE_URL`           | Supabase URL (for future AI features)                 | `true`  |
 
 ---
 
@@ -269,8 +270,7 @@ Distributed under the Apache 2.0 License. See [LICENSE.txt](LICENSE.txt) for mor
 **Ziad Khaled** - Project Maintainer
 
 - GitHub: [@ZiadKhaled999](https://github.com/ZiadKhaled999)
-- Email: [Your email address]
-- LinkedIn: [Your LinkedIn profile]
+- Email: [albhyrytwamrwhy@gmail.com]
 
 **Project Link**: [https://github.com/ZiadKhaled999/ideahub](https://github.com/ZiadKhaled999/ideahub)
 
