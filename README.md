@@ -1,7 +1,9 @@
+# Idea Hub - Enhanced README
+
 <div align="center">
 
-  <!-- Recommended: Replace with your actual logo -->
-  <img src="https://www.flaticon.com/free-icon/idea_4415867?term=idea&related_id=4415867" alt="Idea Hub Project Banner" width="600"/>
+  <!-- Logo placeholder with better styling -->
+  <img src="https://www.flaticon.com/free-icon/idea_4415867?term=idea&related_id=4415867" alt="Idea Hub Project Banner" width="200" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
 
   <h1>Idea Hub</h1>
 
@@ -12,8 +14,9 @@
   <!-- Badges -->
   <p>
     <a href="LICENSE.txt"><img src="https://img.shields.io/badge/License-Apache_2.0-007EC6?style=for-the-badge" alt="License"></a>
-    <a href="#"><img src="https://img.shields.io/badge/Build-Passing-4c1?style=for-the-badge" alt="Build Status"></a>
-    <a href="#"><img src="https://img.shields.io/badge/Version-1.0.0-9f58a3?style=for-the-badge" alt="Version"></a>
+    <a href="https://github.com/ZiadKhaled999/ideahub/actions"><img src="https://img.shields.io/badge/Build-Passing-4c1?style=for-the-badge" alt="Build Status"></a>
+    <a href="https://github.com/ZiadKhaled999/ideahub/releases"><img src="https://img.shields.io/badge/Version-1.0.0-9f58a3?style=for-the-badge" alt="Version"></a>
+    <a href="https://github.com/ZiadKhaled999/ideahub"><img src="https://img.shields.io/github/stars/ZiadKhaled999/ideahub?style=for-the-badge" alt="GitHub stars"></a>
   </p>
 
 </div>
@@ -23,10 +26,10 @@
 ### **Transforming Ephemeral Concepts into Tangible Assets.**
 Standard note-taking applications fail to capture the structured journey of a digital product. Idea Hub is architected to solve this critical gap, providing a dedicated, purpose-built platform that ensures your most valuable ideas are meticulously tracked, evaluated, and primed for development.
 
-<!-- Recommended: Add a high-quality GIF of your application in action -->
-<!-- <div align="center">
-  <img src="path/to/your/app-demo.gif" alt="Idea Hub Application Demo"/>
-</div> -->
+<!-- Application Demo Placeholder -->
+<div align="center">
+  <img src="https://via.placeholder.com/800x400/9f58a3/ffffff?text=Idea+Hub+Application+Demo" alt="Idea Hub Application Demo" style="border-radius: 10px;"/>
+</div>
 
 ## 📋 Table of Contents
 
@@ -37,10 +40,11 @@ Standard note-taking applications fail to capture the structured journey of a di
 5.  [▶️ Operational Commands](#️-operational-commands)
 6.  [📡 API Endpoints](#-api-endpoints)
 7.  [🗄️ Data Architecture](#️-data-architecture)
-8.  [🗺️ Future Vision](#️-future-vision)
-9.  [🤝 Contributing & Collaboration](#-contributing--collaboration)
-10. [📜 License](#-license)
-11. [📬 Get in Touch](#-get-in-touch)
+8.  [🐛 Current Issues](#-current-issues)
+9.  [🗺️ Future Vision](#️-future-vision)
+10. [🤝 Contributing & Collaboration](#-contributing--collaboration)
+11. [📜 License](#-license)
+12. [📬 Get in Touch](#-get-in-touch)
 
 ---
 
@@ -82,7 +86,7 @@ To provision a local instance of the application, please follow the steps below.
 
 1.  **Clone the remote repository:**
     ```sh
-    git clone [https://github.com/ZiadKhaled999/ideahub.git](https://github.com/ZiadKhaled999/ideahub.git)
+    git clone https://github.com/ZiadKhaled999/ideahub.git
     cd ideahub
     ```
 
@@ -94,12 +98,24 @@ To provision a local instance of the application, please follow the steps below.
 3.  **Configure environment variables:**
     Create a `.env.local` file in the project's root directory and populate it with your Supabase project credentials.
     ```env
+    # Supabase Configuration
     NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
     NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+    
+    # AI Features (Not yet implemented)
+    VITE_SUPABASE_PROJECT_ID=""
+    VITE_SUPABASE_PUBLISHABLE_KEY=""
+    VITE_SUPABASE_URL=""
     ```
 
 4.  **Initialize the database schema:**
     Access your Supabase project dashboard and execute the SQL script located at `db/schema.sql` to provision the required tables and security policies.
+
+5.  **Start the development server:**
+    ```sh
+    npm run dev
+    ```
+    The application will be accessible at http://localhost:3000.
 
 ---
 
@@ -111,6 +127,9 @@ The application requires the following environment variables for backend connect
 | ----------------------------- | ----------------------------------------------------- | :------: |
 | `NEXT_PUBLIC_SUPABASE_URL`    | The unique API endpoint URL for your Supabase project. |  `true`  |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | The public anonymous key for your Supabase project.   |  `true`  |
+| `VITE_SUPABASE_PROJECT_ID`    | Supabase project ID (for future AI features)          | `false`  |
+| `VITE_SUPABASE_PUBLISHABLE_KEY`| Supabase publishable key (for future AI features)     | `false`  |
+| `VITE_SUPABASE_URL`           | Supabase URL (for future AI features)                 | `false`  |
 
 ---
 
@@ -122,65 +141,141 @@ Initiates the Next.js development server with Hot-Module Replacement (HMR).
 npm run dev
 ```
 The application will be accessible at http://localhost:3000.
-Production Build
+
+### **Production Build**
 Compiles and optimizes the application for production deployment.
+```sh
 npm run build
+```
 
 This command generates a production-ready .next directory. To serve this build locally, execute:
+```sh
 npm start
+```
 
-📡 API Endpoints
+### **Linting**
+Run ESLint to check code quality:
+```sh
+npm run lint
+```
+
+---
+
+## 📡 API Endpoints
+
 All backend communication is handled via a secure, RESTful API.
-Idea Resource
- * GET /api/ideas
-   * Retrieves a collection of ideas for the authenticated user.
-   * Query Parameters: status, tag, q (search query).
-   * Returns: 200 OK - An array of idea objects.
- * POST /api/ideas
-   * Creates a new idea record.
-   * Request Body: A JSON object representing the new idea.
-   * Returns: 201 Created - The newly created idea object.
- * PUT /api/ideas/{id}
-   * Updates a specified, existing idea by its unique identifier.
-   * Request Body: A JSON object containing the fields to be updated.
-   * Returns: 200 OK - The updated idea object.
- * DELETE /api/ideas/{id}
-   * Permanently deletes an idea by its unique identifier.
-   * Returns: 204 No Content.
-🗄️ Data Architecture
-The core data entity is the ideas table, which is protected by Row Level Security (RLS) to enforce data isolation between users.
-ideas Table Schema
+
+### Idea Resource
+* **GET** `/api/ideas`
+  * Retrieves a collection of ideas for the authenticated user.
+  * Query Parameters: `status`, `tag`, `q` (search query).
+  * Returns: `200 OK` - An array of idea objects.
+
+* **POST** `/api/ideas`
+  * Creates a new idea record.
+  * Request Body: A JSON object representing the new idea.
+  * Returns: `201 Created` - The newly created idea object.
+
+* **PUT** `/api/ideas/{id}`
+  * Updates a specified, existing idea by its unique identifier.
+  * Request Body: A JSON object containing the fields to be updated.
+  * Returns: `200 OK` - The updated idea object.
+
+* **DELETE** `/api/ideas/{id}`
+  * Permanently deletes an idea by its unique identifier.
+  * Returns: `204 No Content`.
+
+---
+
+## 🗄️ Data Architecture
+
+The core data entity is the `ideas` table, which is protected by Row Level Security (RLS) to enforce data isolation between users.
+
+### `ideas` Table Schema
 | Column | Type | Constraints | Description |
 |---|---|---|---|
-| id | uuid | PRIMARY KEY, default: uuid_generate_v4() | Unique identifier for the idea (PK). |
-| user_id | uuid | FOREIGN KEY to auth.users(id) | Owning user's identifier (FK). |
-| title | text | NOT NULL | The concise title of the idea. |
-| description | text |  | A comprehensive description of the idea. |
-| status | text | default: 'Idea' | The current stage in the idea's lifecycle. |
-| tags | text[] |  | An array of text-based classification tags. |
-| color | varchar(7) | default: '#ffffff' | A hex color code for UI card visualization. |
-| created_at | timestamptz | default: now() | Timestamp of the record's creation. |
-| updated_at | timestamptz | default: now() | Timestamp of the last record modification. |
-🗺️ Future Vision
-Our development roadmap includes several high-impact features:
- * [ ] Rich Text Editor: Implement a WYSIWYG editor for the description field.
- * [ ] File Attachments: Allow for the upload of mockups, documents, and other assets.
- * [ ] Team Collaboration: Introduce multi-user workspaces for collaborative ideation.
- * [ ] Analytics Dashboard: Develop a dashboard for visualizing key idea metrics and trends.
-For a detailed list of proposed features and known issues, please consult the open issues on GitHub.
-🤝 Contributing & Collaboration
-We welcome contributions from the open-source community. Your expertise and passion are invaluable in making Idea Hub the best it can be.
-Please review CONTRIBUTING.md for detailed guidelines on our development process.
- * Fork the Project
- * Create your Feature Branch (git checkout -b feature/YourAmazingFeature)
- * Commit your Changes (git commit -m 'feat: Add some AmazingFeature')
- * Push to the Branch (git push origin feature/YourAmazingFeature)
- * Open a Pull Request
-📜 License
-Distributed under the Apache 2.0 License. See LICENSE.txt for more information.
-📬 Get in Touch
-Ziad Khaled - Project Maintainer
+| `id` | `uuid` | `PRIMARY KEY`, `default: uuid_generate_v4()` | Unique identifier for the idea (PK). |
+| `user_id` | `uuid` | `FOREIGN KEY` to `auth.users(id)` | Owning user's identifier (FK). |
+| `title` | `text` | `NOT NULL` | The concise title of the idea. |
+| `description` | `text` |  | A comprehensive description of the idea. |
+| `status` | `text` | `default: 'Idea'` | The current stage in the idea's lifecycle. |
+| `tags` | `text[]` |  | An array of text-based classification tags. |
+| `color` | `varchar(7)` | `default: '#ffffff'` | A hex color code for UI card visualization. |
+| `created_at` | `timestamptz` | `default: now()` | Timestamp of the record's creation. |
+| `updated_at` | `timestamptz` | `default: now()` | Timestamp of the last record modification. |
 
-```
-Project Link: https://github.com/ZiadKhaled999/ideahub
-````
+---
+
+## 🐛 Current Issues
+
+We're actively working to resolve the following issues:
+
+- [ ] **AI Integration**: AI features are not yet implemented in the current version
+- [ ] **Responsive Design**: UI inconsistencies on mobile devices
+- [ ] **Search Performance**: Search functionality can be slow with large datasets
+- [ ] **Image Uploads**: Support for attaching images to ideas is not implemented
+
+---
+
+## 🗺️ Future Vision
+
+Our development roadmap includes several high-impact features:
+
+### Core Improvements
+- [ ] **Rich Text Editor**: Implement a WYSIWYG editor for the description field
+- [ ] **File Attachments**: Allow for the upload of mockups, documents, and other assets
+- [ ] **Team Collaboration**: Introduce multi-user workspaces for collaborative ideation
+- [ ] **Analytics Dashboard**: Develop a dashboard for visualizing key idea metrics and trends
+
+### AI Integration
+- [ ] **Idea Recommendations**: AI-powered suggestions based on existing ideas
+- [ ] **Automated Tagging**: AI-assisted tag generation for new ideas
+- [ ] **Sentiment Analysis**: Analyze idea descriptions for emotional tone
+- [ ] **Similar Idea Detection**: Identify duplicate or similar ideas automatically
+
+For a detailed list of proposed features and known issues, please consult the [open issues on GitHub](https://github.com/ZiadKhaled999/ideahub/issues).
+
+---
+
+## 🤝 Contributing & Collaboration
+
+We welcome contributions from the open-source community. Your expertise and passion are invaluable in making Idea Hub the best it can be.
+
+### Contribution Process
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'feat: Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Contributor Recognition
+Contributors who implement features or fix issues will be recognized here:
+
+- **Feature Implementation**: [@ContributorName](https://github.com/ContributorName) - Implemented [Feature Name]
+- **Bug Fixes**: [@ContributorName](https://github.com/ContributorName) - Fixed [Issue Description]
+
+Please review [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on our development process.
+
+---
+
+## 📜 License
+
+Distributed under the Apache 2.0 License. See [LICENSE.txt](LICENSE.txt) for more information.
+
+---
+
+## 📬 Get in Touch
+
+**Ziad Khaled** - Project Maintainer
+
+- GitHub: [@ZiadKhaled999](https://github.com/ZiadKhaled999)
+- Email: [Your email address]
+- LinkedIn: [Your LinkedIn profile]
+
+**Project Link**: [https://github.com/ZiadKhaled999/ideahub](https://github.com/ZiadKhaled999/ideahub)
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by the Idea Hub contributors</sub>
+</div>
